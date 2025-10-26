@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدارس الهمة العلمية الأهلية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+        
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #f97316 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #1e40af, #2563eb);
+            transform: translateY(-2px);
+        }
+        
+        .btn-orange {
+            background: linear-gradient(45deg, #ea580c, #f97316);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-orange:hover {
+            background: linear-gradient(45deg, #dc2626, #ea580c);
+            transform: translateY(-2px);
+        }
+        
+        .school-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e3a8a, #f97316);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+        }
+        
+        .table-row:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+        
+        .notification-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-full">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="school-logo">
+                        <span>الهمة</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">مدارس الهمة العلمية الأهلية</h1>
+                        <p class="text-blue-100">التميز في التعليم والتربية</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <div class="text-center">
+                        <p class="text-sm">الهاتف الأرضي</p>
+                        <p class="font-bold">04420927</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm">الهواتف</p>
+                        <p class="font-bold">779492227 - 714442137</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div id="welcomeSection" class="text-center mb-12 fade-in">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">أهلاً وسهلاً بكم</h2>
+            <p class="text-xl text-gray-600 mb-8">منصة رقمية متكاملة لخدمة الطلاب والإدارة</p>
+            
+            <!-- Login Options -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Student Login Card -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👨‍🎓</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">دخول الطلاب</h3>
+                        <p class="text-gray-600">ادخل إلى صفحتك الشخصية وتابع درجاتك وحضورك</p>
+                    </div>
+                    <button onclick="showStudentLogin()" class="w-full btn-primary text-white py-3 px-6 rounded-lg font-bold">
+                        تسجيل الدخول للطلاب
+                    </button>
+                </div>
+
+                <!-- Admin Login Card -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👨‍💼</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">دخول الإدارة</h3>
+                        <p class="text-gray-600">إدارة بيانات الطلاب والنظام الأكاديمي</p>
+                    </div>
+                    <button onclick="showAdminLogin()" class="w-full btn-orange text-white py-3 px-6 rounded-lg font-bold">
+                        تسجيل الدخول للإدارة
+                    </button>
+                </div>
+            </div>
+
+            <!-- Developer Credit -->
+            <div class="mt-16 text-center">
+                <p class="text-lg text-gray-600 font-semibold">إعداد وبرمجة: أ. غادة الحيدري</p>
+            </div>
+        </div>
+
+        <!-- Student Login Form -->
+        <div id="studentLoginForm" class="hidden max-w-md mx-auto bg-white rounded-xl shadow-lg p-8 fade-in">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">تسجيل دخول الطلاب</h3>
+                <p class="text-gray-600">أدخل بياناتك للوصول إلى صفحتك الشخصية</p>
+            </div>
+            
+            <form onsubmit="studentLogin(event)">
+                <div class="mb-4">
+                    <label for="studentUsername" class="block text-gray-700 font-bold mb-2">اسم المستخدم</label>
+                    <input type="text" id="studentUsername" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل اسم المستخدم" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="studentPassword" class="block text-gray-700 font-bold mb-2">كلمة المرور</label>
+                    <input type="password" id="studentPassword" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل كلمة المرور" required>
+                </div>
+                
+                <button type="submit" class="w-full btn-primary text-white py-3 px-6 rounded-lg font-bold mb-4">
+                    دخول
+                </button>
+                
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-2">نسيت كلمة المرور؟</p>
+                    <p class="text-sm text-blue-600">تواصل مع إدارة المدرسة على: 779492227</p>
+                </div>
+                
+                <button type="button" onclick="showWelcome()" class="w-full mt-4 text-gray-600 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                    العودة للصفحة الرئيسية
+                </button>
+            </form>
+        </div>
+
+        <!-- Admin Login Form -->
+        <div id="adminLoginForm" class="hidden max-w-md mx-auto bg-white rounded-xl shadow-lg p-8 fade-in">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">تسجيل دخول الإدارة</h3>
+                <p class="text-gray-600">دخول آمن للمسؤولين فقط</p>
+            </div>
+            
+            <form onsubmit="adminLogin(event)">
+                <div class="mb-4">
+                    <label for="adminUsername" class="block text-gray-700 font-bold mb-2">اسم المستخدم الإداري</label>
+                    <input type="text" id="adminUsername" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500" placeholder="أدخل اسم المستخدم الإداري" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="adminPassword" class="block text-gray-700 font-bold mb-2">كلمة المرور</label>
+                    <input type="password" id="adminPassword" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500" placeholder="أدخل كلمة المرور" required>
+                </div>
+                
+                <button type="submit" class="w-full btn-orange text-white py-3 px-6 rounded-lg font-bold mb-4">
+                    دخول الإدارة
+                </button>
+                
+                <button type="button" onclick="showWelcome()" class="w-full text-gray-600 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                    العودة للصفحة الرئيسية
+                </button>
+            </form>
+        </div>
+
+        <!-- Student Dashboard -->
+        <div id="studentDashboard" class="hidden fade-in">
+            <!-- Student Info Header -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 md:space-x-reverse">
+                    <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">👨‍🎓</span>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <h3 id="studentName" class="text-2xl font-bold text-gray-800">أحمد محمد علي</h3>
+                        <p id="studentGrade" class="text-lg text-gray-600">الصف السادس الأساسي</p>
+                        <p id="studentId" class="text-sm text-gray-500">رقم الطالب: 2024001</p>
+                    </div>
+                    <div class="mr-auto">
+                        <button onclick="logout()" class="btn-orange text-white py-2 px-4 rounded-lg">
+                            تسجيل الخروج
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Menu -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                <button onclick="showGrades()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">📊</div>
+                    <h4 class="font-bold text-gray-800">العلامات الدراسية</h4>
+                </button>
+                
+                <button onclick="showAttendance()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">📅</div>
+                    <h4 class="font-bold text-gray-800">الحضور والغياب</h4>
+                </button>
+                
+                <button onclick="showFees()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">💰</div>
+                    <h4 class="font-bold text-gray-800">الرسوم الدراسية</h4>
+                </button>
+                
+                <button onclick="showActivities()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">🎉</div>
+                    <h4 class="font-bold text-gray-800">الأنشطة</h4>
+                </button>
+                
+                <button onclick="showNotifications()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center relative">
+                    <div class="text-4xl mb-2">🔔</div>
+                    <h4 class="font-bold text-gray-800">الإشعارات</h4>
+                    <span class="notification-badge absolute top-2 left-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center">3</span>
+                </button>
+                
+                <button onclick="showContact()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">📞</div>
+                    <h4 class="font-bold text-gray-800">التواصل</h4>
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div id="contentArea" class="bg-white rounded-xl shadow-lg p-6">
+                <div class="text-center py-12">
+                    <div class="text-6xl mb-4">🎓</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">مرحباً بك في صفحتك الشخصية</h3>
+                    <p class="text-gray-600">اختر من القائمة أعلاه لعرض المعلومات المطلوبة</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="hidden fade-in">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">لوحة التحكم الإدارية</h2>
+                <button onclick="logout()" class="btn-orange text-white py-2 px-4 rounded-lg">
+                    تسجيل الخروج
+                </button>
+            </div>
+
+            <!-- Admin Menu -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+                <button onclick="showStudentManagement()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">👥</div>
+                    <h4 class="font-bold text-gray-800">إدارة الطلاب</h4>
+                </button>
+                
+                <button onclick="showGradeManagement()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">📝</div>
+                    <h4 class="font-bold text-gray-800">إدارة العلامات</h4>
+                </button>
+                
+                <button onclick="showAttendanceManagement()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">📋</div>
+                    <h4 class="font-bold text-gray-800">إدارة الحضور</h4>
+                </button>
+                
+                <button onclick="showFeesManagement()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">💳</div>
+                    <h4 class="font-bold text-gray-800">إدارة الرسوم</h4>
+                </button>
+                
+                <button onclick="showActivityManagement()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">🎨</div>
+                    <h4 class="font-bold text-gray-800">إدارة الأنشطة</h4>
+                </button>
+                
+                <button onclick="showNotificationManagement()" class="bg-white rounded-xl shadow-lg p-6 card-hover text-center">
+                    <div class="text-4xl mb-2">📢</div>
+                    <h4 class="font-bold text-gray-800">إدارة الإشعارات</h4>
+                </button>
+            </div>
+
+            <!-- Admin Content Area -->
+            <div id="adminContentArea" class="bg-white rounded-xl shadow-lg p-6">
+                <div class="text-center py-12">
+                    <div class="text-6xl mb-4">🏫</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">لوحة التحكم الإدارية</h3>
+                    <p class="text-gray-600">اختر من القائمة أعلاه لإدارة البيانات</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">مدارس الهمة العلمية الأهلية</h4>
+                    <p class="text-gray-300">التميز في التعليم والتربية</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">معلومات التواصل</h4>
+                    <p class="text-gray-300 mb-2">📍 اليمن - إب - المشنة - دار القدسي</p>
+                    <p class="text-gray-300 mb-2">📞 04420927</p>
+                    <p class="text-gray-300 mb-2">📱 779492227 - 714442137</p>
+                    <p class="text-gray-300">✉️ alhimmaschools@</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">تابعونا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Facebook</a>
+                        <a href="#" class="text-pink-400 hover:text-pink-300">Instagram</a>
+                        <a href="#" class="text-green-400 hover:text-green-300">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2024 مدارس الهمة العلمية الأهلية - جميع الحقوق محفوظة</p>
+                <p class="text-gray-400 mt-2">إعداد وبرمجة: أ. غادة الحيدري</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data storage
+        let currentUser = null;
+        let currentUserType = null;
+        
+        // Sample student data
+        const studentsData = {
+            'student1': {
+                username: 'ahmed2024',
+                password: '123456',
+                name: 'أحمد محمد علي',
+                grade: 'الصف السادس الأساسي',
+                id: '2024001',
+                grades: {
+                    'نوفمبر': { 'القرآن': 95, 'الإسلامية': 88, 'العربية': 92, 'الإنجليزية': 85, 'الرياضيات': 90, 'العلوم': 87, 'الاجتماعيات': 89, 'الحاسوب': 94 },
+                    'ديسمبر': { 'القرآن': 97, 'الإسلامية': 90, 'العربية': 94, 'الإنجليزية': 87, 'الرياضيات': 92, 'العلوم': 89, 'الاجتماعيات': 91, 'الحاسوب': 96 },
+                    'يناير': { 'القرآن': 96, 'الإسلامية': 89, 'العربية': 93, 'الإنجليزية': 86, 'الرياضيات': 91, 'العلوم': 88, 'الاجتماعيات': 90, 'الحاسوب': 95 }
+                },
+                attendance: generateAttendanceData(),
+                fees: { total: 50000, paid: 30000, remaining: 20000 },
+                notifications: [
+                    { type: 'تنبيه', message: 'موعد الامتحان النهائي يوم الأحد القادم', date: '2024-01-15' },
+                    { type: 'تهنئة', message: 'تهانينا لحصولك على المركز الأول في مادة القرآن', date: '2024-01-10' },
+                    { type: 'تنويه', message: 'يرجى إحضار الكتب المطلوبة غداً', date: '2024-01-08' }
+                ]
+            },
+            'student2': {
+                username: 'fatima2024',
+                password: '123456',
+                name: 'فاطمة أحمد محمد',
+                grade: 'الصف الخامس الأساسي',
+                id: '2024002',
+                grades: {
+                    'نوفمبر': { 'القرآن': 98, 'الإسلامية': 92, 'العربية': 89, 'الإنجليزية': 88, 'الرياضيات': 85, 'العلوم': 90, 'الاجتماعيات': 87, 'الحاسوب': 91 },
+                    'ديسمبر': { 'القرآن': 99, 'الإسلامية': 94, 'العربية': 91, 'الإنجليزية': 90, 'الرياضيات': 87, 'العلوم': 92, 'الاجتماعيات': 89, 'الحاسوب': 93 },
+                    'يناير': { 'القرآن': 97, 'الإسلامية': 93, 'العربية': 90, 'الإنجليزية': 89, 'الرياضيات': 86, 'العلوم': 91, 'الاجتماعيات': 88, 'الحاسوب': 92 }
+                },
+                attendance: generateAttendanceData(),
+                fees: { total: 45000, paid: 45000, remaining: 0 },
+                notifications: [
+                    { type: 'تهنئة', message: 'مبروك حصولك على المركز الأول في الصف', date: '2024-01-12' },
+                    { type: 'تنويه', message: 'تم تسديد جميع الرسوم الدراسية', date: '2024-01-05' }
+                ]
+            },
+            'student3': {
+                username: 'omar2024',
+                password: '123456',
+                name: 'عمر سالم حسن',
+                grade: 'الصف السابع الأساسي',
+                id: '2024003',
+                grades: {
+                    'نوفمبر': { 'القرآن': 85, 'الإسلامية': 82, 'العربية': 88, 'الإنجليزية': 79, 'الرياضيات': 92, 'العلوم': 86, 'الاجتماعيات': 84, 'الحاسوب': 89 },
+                    'ديسمبر': { 'القرآن': 87, 'الإسلامية': 84, 'العربية': 90, 'الإنجليزية': 81, 'الرياضيات': 94, 'العلوم': 88, 'الاجتماعيات': 86, 'الحاسوب': 91 },
+                    'يناير': { 'القرآن': 86, 'الإسلامية': 83, 'العربية': 89, 'الإنجليزية': 80, 'الرياضيات': 93, 'العلوم': 87, 'الاجتماعيات': 85, 'الحاسوب': 90 }
+                },
+                attendance: generateAttendanceData(),
+                fees: { total: 55000, paid: 25000, remaining: 30000 },
+                notifications: [
+                    { type: 'تنبيه', message: 'يرجى مراجعة إدارة المدرسة لمناقشة الرسوم المتبقية', date: '2024-01-14' },
+                    { type: 'تهنئة', message: 'تحسن ملحوظ في مادة الرياضيات', date: '2024-01-09' }
+                ]
+            }
+        };
+        
+        // Sample admin data
+        const adminData = {
+            username: 'admin',
+            password: 'admin123'
+        };
+        
+        function generateAttendanceData() {
+            const attendance = {};
+            const months = ['نوفمبر', 'ديسمبر', 'يناير'];
+            months.forEach(month => {
+                attendance[month] = {};
+                for (let day = 1; day <= 30; day++) {
+                    attendance[month][day] = Math.random() > 0.1 ? 'حاضر' : 'غائب';
+                }
+            });
+            return attendance;
+        }
+        
+        // Navigation functions
+        function showWelcome() {
+            hideAllSections();
+            document.getElementById('welcomeSection').classList.remove('hidden');
+        }
+        
+        function showStudentLogin() {
+            hideAllSections();
+            document.getElementById('studentLoginForm').classList.remove('hidden');
+        }
+        
+        function showAdminLogin() {
+            hideAllSections();
+            document.getElementById('adminLoginForm').classList.remove('hidden');
+        }
+        
+        function hideAllSections() {
+            const sections = ['welcomeSection', 'studentLoginForm', 'adminLoginForm', 'studentDashboard', 'adminDashboard'];
+            sections.forEach(section => {
+                document.getElementById(section).classList.add('hidden');
+            });
+        }
+        
+        // Login functions
+        function studentLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('studentUsername').value;
+            const password = document.getElementById('studentPassword').value;
+            
+            // Check credentials
+            const student = Object.values(studentsData).find(s => s.username === username && s.password === password);
+            
+            if (student) {
+                currentUser = student;
+                currentUserType = 'student';
+                
+                // Update student info
+                document.getElementById('studentName').textContent = student.name;
+                document.getElementById('studentGrade').textContent = student.grade;
+                document.getElementById('studentId').textContent = `رقم الطالب: ${student.id}`;
+                
+                hideAllSections();
+                document.getElementById('studentDashboard').classList.remove('hidden');
+            } else {
+                showCustomAlert('خطأ في تسجيل الدخول', 'اسم المستخدم أو كلمة المرور غير صحيحة');
+            }
+        }
+        
+        function adminLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            if (username === adminData.username && password === adminData.password) {
+                currentUser = adminData;
+                currentUserType = 'admin';
+                
+                hideAllSections();
+                document.getElementById('adminDashboard').classList.remove('hidden');
+            } else {
+                showCustomAlert('خطأ في تسجيل الدخول', 'بيانات الدخول غير صحيحة');
+            }
+        }
+        
+        function logout() {
+            currentUser = null;
+            currentUserType = null;
+            showWelcome();
+            
+            // Clear forms
+            document.getElementById('studentUsername').value = '';
+            document.getElementById('studentPassword').value = '';
+            document.getElementById('adminUsername').value = '';
+            document.getElementById('adminPassword').value = '';
+        }
+        
+        // Student dashboard functions
+        function showGrades() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📊 العلامات الدراسية</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-blue-50">
+                                    <th class="border border-gray-300 px-4 py-2 text-right">المادة</th>
+                                    <th class="border border-gray-300 px-4 py-2">نوفمبر</th>
+                                    <th class="border border-gray-300 px-4 py-2">ديسمبر</th>
+                                    <th class="border border-gray-300 px-4 py-2">يناير</th>
+                                    <th class="border border-gray-300 px-4 py-2">المعدل</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${generateGradesTable()}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = content;
+        }
+        
+        function generateGradesTable() {
+            const subjects = ['القرآن', 'الإسلامية', 'العربية', 'الإنجليزية', 'الرياضيات', 'العلوم', 'الاجتماعيات', 'الحاسوب'];
+            const months = ['نوفمبر', 'ديسمبر', 'يناير'];
+            
+            return subjects.map(subject => {
+                const grades = months.map(month => currentUser.grades[month][subject]);
+                const average = Math.round(grades.reduce((a, b) => a + b, 0) / grades.length);
+                
+                return `
+                    <tr class="table-row">
+                        <td class="border border-gray-300 px-4 py-2 font-semibold">${subject}</td>
+                        ${grades.map(grade => `<td class="border border-gray-300 px-4 py-2 text-center">${grade}</td>`).join('')}
+                        <td class="border border-gray-300 px-4 py-2 text-center font-bold ${average >= 90 ? 'text-green-600' : average >= 80 ? 'text-blue-600' : 'text-orange-600'}">${average}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+        
+        function showAttendance() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📅 الحضور والغياب</h3>
+                    <div class="mb-4">
+                        <select id="attendanceMonth" onchange="updateAttendanceTable()" class="px-4 py-2 border border-gray-300 rounded-lg">
+                            <option value="نوفمبر">نوفمبر</option>
+                            <option value="ديسمبر">ديسمبر</option>
+                            <option value="يناير">يناير</option>
+                        </select>
+                    </div>
+                    <div id="attendanceTable">
+                        ${generateAttendanceTable('نوفمبر')}
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = content;
+        }
+        
+        function updateAttendanceTable() {
+            const month = document.getElementById('attendanceMonth').value;
+            document.getElementById('attendanceTable').innerHTML = generateAttendanceTable(month);
+        }
+        
+        function generateAttendanceTable(month) {
+            const attendance = currentUser.attendance[month];
+            let presentDays = 0;
+            let absentDays = 0;
+            
+            let tableRows = '';
+            for (let day = 1; day <= 30; day++) {
+                const status = attendance[day];
+                if (status === 'حاضر') presentDays++;
+                else absentDays++;
+                
+                const statusClass = status === 'حاضر' ? 'text-green-600' : 'text-red-600';
+                tableRows += `
+                    <tr class="table-row">
+                        <td class="border border-gray-300 px-4 py-2 text-center">${day}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center ${statusClass} font-semibold">${status}</td>
+                    </tr>
+                `;
+            }
+            
+            return `
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="text-lg font-bold text-green-800">أيام الحضور</h4>
+                        <p class="text-2xl font-bold text-green-600">${presentDays} يوم</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h4 class="text-lg font-bold text-red-800">أيام الغياب</h4>
+                        <p class="text-2xl font-bold text-red-600">${absentDays} يوم</p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr class="bg-blue-50">
+                                <th class="border border-gray-300 px-4 py-2">اليوم</th>
+                                <th class="border border-gray-300 px-4 py-2">الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+        
+        function showFees() {
+            const fees = currentUser.fees;
+            const paidPercentage = (fees.paid / fees.total) * 100;
+            
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">💰 الرسوم الدراسية</h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-blue-50 p-6 rounded-lg text-center">
+                            <h4 class="text-lg font-bold text-blue-800 mb-2">إجمالي الرسوم</h4>
+                            <p class="text-3xl font-bold text-blue-600">${fees.total.toLocaleString()}</p>
+                            <p class="text-sm text-blue-600">ريال يمني</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg text-center">
+                            <h4 class="text-lg font-bold text-green-800 mb-2">المبلغ المدفوع</h4>
+                            <p class="text-3xl font-bold text-green-600">${fees.paid.toLocaleString()}</p>
+                            <p class="text-sm text-green-600">ريال يمني</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-6 rounded-lg text-center">
+                            <h4 class="text-lg font-bold text-orange-800 mb-2">المبلغ المتبقي</h4>
+                            <p class="text-3xl font-bold text-orange-600">${fees.remaining.toLocaleString()}</p>
+                            <p class="text-sm text-orange-600">ريال يمني</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-bold text-gray-800 mb-4">نسبة السداد</h4>
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-gradient-to-r from-blue-500 to-green-500 h-4 rounded-full transition-all duration-500" style="width: ${paidPercentage}%"></div>
+                        </div>
+                        <p class="text-center font-bold text-gray-700">${paidPercentage.toFixed(1)}% مكتمل</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = content;
+        }
+        
+        function showActivities() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">🎉 الأنشطة المدرسية</h3>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                            <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                                <span class="text-6xl text-white">🏆</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">مسابقة القرآن الكريم</h4>
+                                <p class="text-sm text-gray-600">المركز الأول في مسابقة حفظ القرآن على مستوى المدرسة</p>
+                                <p class="text-xs text-gray-500 mt-2">15 يناير 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                            <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                                <span class="text-6xl text-white">⚽</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">بطولة كرة القدم</h4>
+                                <p class="text-sm text-gray-600">مشاركة في بطولة كرة القدم بين الصفوف</p>
+                                <p class="text-xs text-gray-500 mt-2">10 يناير 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                            <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                                <span class="text-6xl text-white">🎨</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">معرض الفنون</h4>
+                                <p class="text-sm text-gray-600">مشاركة في معرض الرسم والأعمال الفنية</p>
+                                <p class="text-xs text-gray-500 mt-2">5 يناير 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                            <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                                <span class="text-6xl text-white">📚</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">مسابقة القراءة</h4>
+                                <p class="text-sm text-gray-600">المشاركة في مسابقة أفضل قارئ في المدرسة</p>
+                                <p class="text-xs text-gray-500 mt-2">28 ديسمبر 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                            <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                                <span class="text-6xl text-white">🔬</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">معرض العلوم</h4>
+                                <p class="text-sm text-gray-600">عرض مشروع علمي في معرض العلوم السنوي</p>
+                                <p class="text-xs text-gray-500 mt-2">20 ديسمبر 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                            <div class="h-48 bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                                <span class="text-6xl text-white">🎭</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">العرض المسرحي</h4>
+                                <p class="text-sm text-gray-600">المشاركة في العرض المسرحي السنوي للمدرسة</p>
+                                <p class="text-xs text-gray-500 mt-2">15 ديسمبر 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = content;
+        }
+        
+        function showNotifications() {
+            const notifications = currentUser.notifications;
+            
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">🔔 الإشعارات</h3>
+                    
+                    <div class="space-y-4">
+                        ${notifications.map(notification => `
+                            <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-center mb-2">
+                                            <span class="px-3 py-1 text-xs font-semibold rounded-full ${getNotificationTypeClass(notification.type)}">${notification.type}</span>
+                                            <span class="text-sm text-gray-500 mr-3">${notification.date}</span>
+                                        </div>
+                                        <p class="text-gray-800">${notification.message}</p>
+                                    </div>
+                                    <div class="text-2xl mr-4">
+                                        ${getNotificationIcon(notification.type)}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-500">لا توجد إشعارات أخرى</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = content;
+        }
+        
+        function getNotificationTypeClass(type) {
+            switch(type) {
+                case 'تنبيه': return 'bg-red-100 text-red-800';
+                case 'تهنئة': return 'bg-green-100 text-green-800';
+                case 'تنويه': return 'bg-blue-100 text-blue-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+        
+        function getNotificationIcon(type) {
+            switch(type) {
+                case 'تنبيه': return '⚠️';
+                case 'تهنئة': return '🎉';
+                case 'تنويه': return 'ℹ️';
+                default: return '📢';
+            }
+        }
+        
+        function showContact() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📞 التواصل مع المدرسة</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-gray-800">معلومات التواصل</h4>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl ml-3">📞</span>
+                                    <h5 class="font-bold text-blue-800">الهاتف الأرضي</h5>
+                                </div>
+                                <p class="text-blue-600 font-semibold">04420927</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl ml-3">📱</span>
+                                    <h5 class="font-bold text-green-800">الهواتف المحمولة</h5>
+                                </div>
+                                <p class="text-green-600 font-semibold">779492227</p>
+                                <p class="text-green-600 font-semibold">714442137</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl ml-3">📍</span>
+                                    <h5 class="font-bold text-purple-800">العنوان</h5>
+                                </div>
+                                <p class="text-purple-600">اليمن - إب - المشنة - دار القدسي</p>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl ml-3">✉️</span>
+                                    <h5 class="font-bold text-orange-800">البريد الإلكتروني</h5>
+                                </div>
+                                <p class="text-orange-600 font-semibold">alhimmaschools@</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-gray-800">تابعونا على</h4>
+                            
+                            <div class="space-y-4">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    <span class="text-2xl ml-3">📘</span>
+                                    <div>
+                                        <h5 class="font-bold">Facebook</h5>
+                                        <p class="text-sm text-blue-100">تابع أخبار المدرسة والأنشطة</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors">
+                                    <span class="text-2xl ml-3">📷</span>
+                                    <div>
+                                        <h5 class="font-bold">Instagram</h5>
+                                        <p class="text-sm text-pink-100">صور وفيديوهات الأنشطة المدرسية</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                                    <span class="text-2xl ml-3">💬</span>
+                                    <div>
+                                        <h5 class="font-bold">WhatsApp</h5>
+                                        <p class="text-sm text-green-100">تواصل مباشر مع إدارة المدرسة</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-2">ساعات العمل</h5>
+                                <p class="text-gray-600">السبت - الخميس: 7:00 ص - 2:00 م</p>
+                                <p class="text-gray-600">الجمعة: مغلق</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = content;
+        }
+        
+        // Admin dashboard functions
+        function showStudentManagement() {
+            const content = `
+                <div class="slide-in">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800">👥 إدارة الطلاب</h3>
+                        <button onclick="showAddStudentForm()" class="btn-primary text-white py-2 px-4 rounded-lg">
+                            إضافة طالب جديد
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">الاسم</th>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">الصف</th>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">رقم الطالب</th>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    ${generateStudentsList()}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+        }
+        
+        function generateStudentsList() {
+            return Object.entries(studentsData).map(([key, student]) => `
+                <tr class="table-row">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center ml-3">
+                                <span class="text-sm">👨‍🎓</span>
+                            </div>
+                            <div>
+                                <div class="text-sm font-medium text-gray-900">${student.name}</div>
+                                <div class="text-sm text-gray-500">${student.username}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${student.grade}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${student.id}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="editStudent('${key}')" class="text-blue-600 hover:text-blue-900 ml-3">تعديل</button>
+                        <button onclick="deleteStudent('${key}')" class="text-red-600 hover:text-red-900">حذف</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function showGradeManagement() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📝 إدارة العلامات</h3>
+                    
+                    <div class="mb-6">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <select id="gradeStudent" class="px-4 py-2 border border-gray-300 rounded-lg">
+                                <option value="">اختر الطالب</option>
+                                ${Object.entries(studentsData).map(([key, student]) => 
+                                    `<option value="${key}">${student.name}</option>`
+                                ).join('')}
+                            </select>
+                            
+                            <select id="gradeMonth" class="px-4 py-2 border border-gray-300 rounded-lg">
+                                <option value="نوفمبر">نوفمبر</option>
+                                <option value="ديسمبر">ديسمبر</option>
+                                <option value="يناير">يناير</option>
+                            </select>
+                            
+                            <button onclick="loadGradesForEdit()" class="btn-primary text-white py-2 px-4 rounded-lg">
+                                تحميل العلامات
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="gradeEditForm" class="hidden">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">تعديل العلامات</h4>
+                            <div class="grid md:grid-cols-2 gap-4" id="gradeInputs">
+                                <!-- Grade inputs will be generated here -->
+                            </div>
+                            <div class="mt-6">
+                                <button onclick="saveGrades()" class="btn-primary text-white py-2 px-4 rounded-lg ml-3">
+                                    حفظ العلامات
+                                </button>
+                                <button onclick="cancelGradeEdit()" class="text-gray-600 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                    إلغاء
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+        }
+        
+        function loadGradesForEdit() {
+            const studentKey = document.getElementById('gradeStudent').value;
+            const month = document.getElementById('gradeMonth').value;
+            
+            if (!studentKey) {
+                showCustomAlert('تنبيه', 'يرجى اختيار الطالب أولاً');
+                return;
+            }
+            
+            const student = studentsData[studentKey];
+            const grades = student.grades[month];
+            const subjects = ['القرآن', 'الإسلامية', 'العربية', 'الإنجليزية', 'الرياضيات', 'العلوم', 'الاجتماعيات', 'الحاسوب'];
+            
+            const gradeInputsHtml = subjects.map(subject => `
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">${subject}</label>
+                    <input type="number" id="grade_${subject}" value="${grades[subject]}" min="0" max="100" 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+            `).join('');
+            
+            document.getElementById('gradeInputs').innerHTML = gradeInputsHtml;
+            document.getElementById('gradeEditForm').classList.remove('hidden');
+        }
+        
+        function saveGrades() {
+            const studentKey = document.getElementById('gradeStudent').value;
+            const month = document.getElementById('gradeMonth').value;
+            const subjects = ['القرآن', 'الإسلامية', 'العربية', 'الإنجليزية', 'الرياضيات', 'العلوم', 'الاجتماعيات', 'الحاسوب'];
+            
+            subjects.forEach(subject => {
+                const grade = parseInt(document.getElementById(`grade_${subject}`).value);
+                studentsData[studentKey].grades[month][subject] = grade;
+            });
+            
+            showCustomAlert('نجح', 'تم حفظ العلامات بنجاح');
+            cancelGradeEdit();
+        }
+        
+        function cancelGradeEdit() {
+            document.getElementById('gradeEditForm').classList.add('hidden');
+            document.getElementById('gradeStudent').value = '';
+        }
+        
+        function showAttendanceManagement() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📋 إدارة الحضور والغياب</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">تحديث الحضور</h4>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">اختر الطالب</label>
+                                    <select id="attendanceStudent" onchange="loadAttendanceStats()" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="">اختر الطالب</option>
+                                        ${Object.entries(studentsData).map(([key, student]) => 
+                                            `<option value="${key}">${student.name}</option>`
+                                        ).join('')}
+                                    </select>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-gray-700 font-bold mb-2">الشهر</label>
+                                        <select id="attendanceMonth" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                            <option value="نوفمبر">نوفمبر</option>
+                                            <option value="ديسمبر">ديسمبر</option>
+                                            <option value="يناير">يناير</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-gray-700 font-bold mb-2">اليوم</label>
+                                        <input type="number" id="attendanceDay" placeholder="1-30" min="1" max="30" 
+                                               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">حالة الحضور</label>
+                                    <select id="attendanceStatus" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="حاضر">حاضر</option>
+                                        <option value="غائب">غائب</option>
+                                        <option value="مبرر">مبرر</option>
+                                    </select>
+                                </div>
+                                
+                                <button onclick="updateAttendance()" class="w-full btn-primary text-white py-2 px-4 rounded-lg">
+                                    تحديث الحضور
+                                </button>
+                                
+                                <div class="border-t pt-4">
+                                    <h5 class="font-bold text-gray-800 mb-2">تحديث سريع لليوم الحالي</h5>
+                                    <div class="flex space-x-2 space-x-reverse">
+                                        <button onclick="markTodayAttendance('حاضر')" class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700">
+                                            حاضر اليوم
+                                        </button>
+                                        <button onclick="markTodayAttendance('غائب')" class="flex-1 bg-red-600 text-white py-2 px-3 rounded text-sm hover:bg-red-700">
+                                            غائب اليوم
+                                        </button>
+                                        <button onclick="markTodayAttendance('مبرر')" class="flex-1 bg-yellow-600 text-white py-2 px-3 rounded text-sm hover:bg-yellow-700">
+                                            مبرر اليوم
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">إحصائيات الحضور</h4>
+                            <div id="attendanceStats">
+                                <div class="text-center text-gray-500 py-8">
+                                    <span class="text-4xl block mb-2">📊</span>
+                                    <p>اختر طالباً لعرض إحصائيات الحضور</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-white border border-gray-200 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-gray-800 mb-4">تقرير الحضور الشامل</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full border-collapse border border-gray-300">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="border border-gray-300 px-4 py-2 text-right">الطالب</th>
+                                        <th class="border border-gray-300 px-4 py-2">الصف</th>
+                                        <th class="border border-gray-300 px-4 py-2">أيام الحضور</th>
+                                        <th class="border border-gray-300 px-4 py-2">أيام الغياب</th>
+                                        <th class="border border-gray-300 px-4 py-2">نسبة الحضور</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${generateAttendanceReport()}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+        }
+        
+        function updateAttendance() {
+            const studentKey = document.getElementById('attendanceStudent').value;
+            const month = document.getElementById('attendanceMonth').value;
+            const day = document.getElementById('attendanceDay').value;
+            const status = document.getElementById('attendanceStatus').value;
+            
+            if (!studentKey || !day) {
+                showCustomAlert('تنبيه', 'يرجى ملء جميع الحقول');
+                return;
+            }
+            
+            studentsData[studentKey].attendance[month][day] = status;
+            showCustomAlert('نجح', 'تم تحديث حالة الحضور بنجاح');
+            
+            // Clear form
+            document.getElementById('attendanceDay').value = '';
+            
+            // Refresh stats if student is selected
+            if (studentKey) {
+                loadAttendanceStats();
+            }
+        }
+        
+        function loadAttendanceStats() {
+            const studentKey = document.getElementById('attendanceStudent').value;
+            if (!studentKey) {
+                document.getElementById('attendanceStats').innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <span class="text-4xl block mb-2">📊</span>
+                        <p>اختر طالباً لعرض إحصائيات الحضور</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const student = studentsData[studentKey];
+            const months = ['نوفمبر', 'ديسمبر', 'يناير'];
+            let totalPresent = 0;
+            let totalAbsent = 0;
+            let totalExcused = 0;
+            
+            const monthlyStats = months.map(month => {
+                let present = 0;
+                let absent = 0;
+                let excused = 0;
+                
+                for (let day = 1; day <= 30; day++) {
+                    const status = student.attendance[month][day];
+                    if (status === 'حاضر') present++;
+                    else if (status === 'غائب') absent++;
+                    else if (status === 'مبرر') excused++;
+                }
+                
+                totalPresent += present;
+                totalAbsent += absent;
+                totalExcused += excused;
+                
+                return { month, present, absent, excused };
+            });
+            
+            const totalDays = totalPresent + totalAbsent + totalExcused;
+            const attendancePercentage = totalDays > 0 ? ((totalPresent + totalExcused) / totalDays * 100).toFixed(1) : 0;
+            
+            document.getElementById('attendanceStats').innerHTML = `
+                <div class="space-y-4">
+                    <div class="text-center mb-4">
+                        <h5 class="font-bold text-lg text-gray-800">${student.name}</h5>
+                        <p class="text-gray-600">${student.grade}</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div class="bg-green-50 p-3 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-green-600">${totalPresent}</div>
+                            <div class="text-sm text-green-800">حاضر</div>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-red-600">${totalAbsent}</div>
+                            <div class="text-sm text-red-800">غائب</div>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <div class="text-2xl font-bold text-yellow-600">${totalExcused}</div>
+                            <div class="text-sm text-yellow-800">مبرر</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">${attendancePercentage}%</div>
+                            <div class="text-sm text-blue-800">نسبة الحضور الإجمالية</div>
+                        </div>
+                        <div class="w-full bg-blue-200 rounded-full h-2 mt-2">
+                            <div class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: ${attendancePercentage}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <h6 class="font-bold text-gray-800">الإحصائيات الشهرية:</h6>
+                        ${monthlyStats.map(stat => `
+                            <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                                <span class="font-medium">${stat.month}</span>
+                                <div class="text-sm">
+                                    <span class="text-green-600">${stat.present} حاضر</span> |
+                                    <span class="text-red-600">${stat.absent} غائب</span> |
+                                    <span class="text-yellow-600">${stat.excused} مبرر</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function markTodayAttendance(status) {
+            const studentKey = document.getElementById('attendanceStudent').value;
+            if (!studentKey) {
+                showCustomAlert('تنبيه', 'يرجى اختيار الطالب أولاً');
+                return;
+            }
+            
+            const today = new Date();
+            const currentMonth = 'يناير'; // For demo purposes, using January
+            const currentDay = today.getDate();
+            
+            studentsData[studentKey].attendance[currentMonth][currentDay] = status;
+            showCustomAlert('نجح', `تم تسجيل ${status} للطالب في اليوم ${currentDay}`);
+            
+            // Refresh stats
+            loadAttendanceStats();
+        }
+        
+        function generateAttendanceReport() {
+            return Object.entries(studentsData).map(([key, student]) => {
+                const months = ['نوفمبر', 'ديسمبر', 'يناير'];
+                let totalPresent = 0;
+                let totalAbsent = 0;
+                let totalExcused = 0;
+                
+                months.forEach(month => {
+                    for (let day = 1; day <= 30; day++) {
+                        const status = student.attendance[month][day];
+                        if (status === 'حاضر') totalPresent++;
+                        else if (status === 'غائب') totalAbsent++;
+                        else if (status === 'مبرر') totalExcused++;
+                    }
+                });
+                
+                const totalDays = totalPresent + totalAbsent + totalExcused;
+                const attendancePercentage = totalDays > 0 ? ((totalPresent + totalExcused) / totalDays * 100).toFixed(1) : 0;
+                const statusColor = attendancePercentage >= 90 ? 'text-green-600' : attendancePercentage >= 75 ? 'text-yellow-600' : 'text-red-600';
+                
+                return `
+                    <tr class="table-row">
+                        <td class="border border-gray-300 px-4 py-2 font-medium">${student.name}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">${student.grade}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center text-green-600">${totalPresent + totalExcused}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center text-red-600">${totalAbsent}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center font-bold ${statusColor}">${attendancePercentage}%</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+        
+        function showFeesManagement() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">💳 إدارة الرسوم الدراسية</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">تحديث رسوم الطالب</h4>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">اختر الطالب</label>
+                                    <select id="feesStudent" onchange="loadStudentFees()" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="">اختر الطالب</option>
+                                        ${Object.entries(studentsData).map(([key, student]) => 
+                                            `<option value="${key}">${student.name}</option>`
+                                        ).join('')}
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">إجمالي الرسوم</label>
+                                    <input type="number" id="totalFees" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="المبلغ الإجمالي">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">المبلغ المدفوع</label>
+                                    <input type="number" id="paidFees" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="المبلغ المدفوع">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">المبلغ المتبقي</label>
+                                    <input type="number" id="remainingFees" readonly class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50" placeholder="يحسب تلقائياً">
+                                </div>
+                                
+                                <button onclick="updateFees()" class="w-full btn-primary text-white py-2 px-4 rounded-lg">
+                                    تحديث الرسوم
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">ملخص الرسوم</h4>
+                            <div id="feesOverview">
+                                ${generateFeesOverview()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+            
+            // Add event listeners for automatic calculation
+            document.getElementById('totalFees').addEventListener('input', calculateRemaining);
+            document.getElementById('paidFees').addEventListener('input', calculateRemaining);
+        }
+        
+        function loadStudentFees() {
+            const studentKey = document.getElementById('feesStudent').value;
+            if (!studentKey) return;
+            
+            const fees = studentsData[studentKey].fees;
+            document.getElementById('totalFees').value = fees.total;
+            document.getElementById('paidFees').value = fees.paid;
+            document.getElementById('remainingFees').value = fees.remaining;
+        }
+        
+        function calculateRemaining() {
+            const total = parseFloat(document.getElementById('totalFees').value) || 0;
+            const paid = parseFloat(document.getElementById('paidFees').value) || 0;
+            document.getElementById('remainingFees').value = total - paid;
+        }
+        
+        function updateFees() {
+            const studentKey = document.getElementById('feesStudent').value;
+            const total = parseFloat(document.getElementById('totalFees').value);
+            const paid = parseFloat(document.getElementById('paidFees').value);
+            
+            if (!studentKey || isNaN(total) || isNaN(paid)) {
+                showCustomAlert('تنبيه', 'يرجى ملء جميع الحقول بقيم صحيحة');
+                return;
+            }
+            
+            studentsData[studentKey].fees = {
+                total: total,
+                paid: paid,
+                remaining: total - paid
+            };
+            
+            showCustomAlert('نجح', 'تم تحديث الرسوم بنجاح');
+            document.getElementById('feesOverview').innerHTML = generateFeesOverview();
+        }
+        
+        function generateFeesOverview() {
+            let totalCollected = 0;
+            let totalRemaining = 0;
+            
+            const studentsHtml = Object.entries(studentsData).map(([key, student]) => {
+                totalCollected += student.fees.paid;
+                totalRemaining += student.fees.remaining;
+                
+                return `
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="text-sm font-medium">${student.name}</span>
+                        <span class="text-sm ${student.fees.remaining === 0 ? 'text-green-600' : 'text-orange-600'}">
+                            ${student.fees.remaining === 0 ? 'مكتمل' : `متبقي: ${student.fees.remaining.toLocaleString()}`}
+                        </span>
+                    </div>
+                `;
+            }).join('');
+            
+            return `
+                <div class="space-y-4">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-green-800">إجمالي المحصل</h5>
+                        <p class="text-2xl font-bold text-green-600">${totalCollected.toLocaleString()}</p>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-orange-800">إجمالي المتبقي</h5>
+                        <p class="text-2xl font-bold text-orange-600">${totalRemaining.toLocaleString()}</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5 class="font-bold text-gray-800 mb-2">حالة الطلاب</h5>
+                        ${studentsHtml}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function showActivityManagement() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">🎨 إدارة الأنشطة</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">إضافة نشاط جديد</h4>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">عنوان النشاط</label>
+                                    <input type="text" id="activityTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="أدخل عنوان النشاط">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">وصف النشاط</label>
+                                    <textarea id="activityDescription" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="أدخل وصف النشاط"></textarea>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">تاريخ النشاط</label>
+                                    <input type="date" id="activityDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">نوع النشاط</label>
+                                    <select id="activityType" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="🏆">مسابقة</option>
+                                        <option value="⚽">رياضي</option>
+                                        <option value="🎨">فني</option>
+                                        <option value="📚">تعليمي</option>
+                                        <option value="🔬">علمي</option>
+                                        <option value="🎭">ثقافي</option>
+                                    </select>
+                                </div>
+                                
+                                <button onclick="addActivity()" class="w-full btn-primary text-white py-2 px-4 rounded-lg">
+                                    إضافة النشاط
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">الأنشطة الحالية</h4>
+                            <div id="activitiesList" class="space-y-3 max-h-96 overflow-y-auto">
+                                <div class="text-center text-gray-500 py-8">
+                                    <span class="text-4xl block mb-2">🎉</span>
+                                    <p>سيتم عرض الأنشطة المضافة هنا</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+        }
+        
+        function addActivity() {
+            const title = document.getElementById('activityTitle').value;
+            const description = document.getElementById('activityDescription').value;
+            const date = document.getElementById('activityDate').value;
+            const type = document.getElementById('activityType').value;
+            
+            if (!title || !description || !date) {
+                showCustomAlert('تنبيه', 'يرجى ملء جميع الحقول');
+                return;
+            }
+            
+            // Here you would normally save to a database
+            // For demo purposes, we'll just show a success message
+            showCustomAlert('نجح', 'تم إضافة النشاط بنجاح');
+            
+            // Clear form
+            document.getElementById('activityTitle').value = '';
+            document.getElementById('activityDescription').value = '';
+            document.getElementById('activityDate').value = '';
+            
+            // Add to activities list (demo)
+            const activitiesList = document.getElementById('activitiesList');
+            const activityHtml = `
+                <div class="border border-gray-200 rounded-lg p-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <span class="text-2xl ml-3">${type}</span>
+                            <div>
+                                <h5 class="font-bold text-gray-800">${title}</h5>
+                                <p class="text-sm text-gray-600">${description}</p>
+                                <p class="text-xs text-gray-500">${date}</p>
+                            </div>
+                        </div>
+                        <button onclick="this.parentElement.parentElement.remove()" class="text-red-600 hover:text-red-800">
+                            حذف
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            if (activitiesList.innerHTML.includes('سيتم عرض الأنشطة')) {
+                activitiesList.innerHTML = activityHtml;
+            } else {
+                activitiesList.insertAdjacentHTML('afterbegin', activityHtml);
+            }
+        }
+        
+        function showNotificationManagement() {
+            const content = `
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">📢 إدارة الإشعارات</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">إرسال إشعار جديد</h4>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">نوع الإشعار</label>
+                                    <select id="notificationType" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="عام">إشعار عام لجميع الطلاب</option>
+                                        <option value="خاص">إشعار خاص لطالب محدد</option>
+                                    </select>
+                                </div>
+                                
+                                <div id="studentSelect" class="hidden">
+                                    <label class="block text-gray-700 font-bold mb-2">اختر الطالب</label>
+                                    <select id="notificationStudent" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="">اختر الطالب</option>
+                                        ${Object.entries(studentsData).map(([key, student]) => 
+                                            `<option value="${key}">${student.name}</option>`
+                                        ).join('')}
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">تصنيف الإشعار</label>
+                                    <select id="notificationCategory" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                        <option value="تنبيه">تنبيه</option>
+                                        <option value="تهنئة">تهنئة</option>
+                                        <option value="تنويه">تنويه دراسي</option>
+                                        <option value="إعلان">إعلان</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">نص الإشعار</label>
+                                    <textarea id="notificationMessage" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="أدخل نص الإشعار"></textarea>
+                                </div>
+                                
+                                <button onclick="sendNotification()" class="w-full btn-primary text-white py-2 px-4 rounded-lg">
+                                    إرسال الإشعار
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">الإشعارات المرسلة</h4>
+                            <div id="sentNotifications" class="space-y-3 max-h-96 overflow-y-auto">
+                                ${generateSentNotifications()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+            
+            // Add event listener for notification type change
+            document.getElementById('notificationType').addEventListener('change', function() {
+                const studentSelect = document.getElementById('studentSelect');
+                if (this.value === 'خاص') {
+                    studentSelect.classList.remove('hidden');
+                } else {
+                    studentSelect.classList.add('hidden');
+                }
+            });
+        }
+        
+        function generateSentNotifications() {
+            // Get all notifications from all students
+            const allNotifications = [];
+            Object.entries(studentsData).forEach(([key, student]) => {
+                student.notifications.forEach(notification => {
+                    allNotifications.push({
+                        ...notification,
+                        studentName: student.name,
+                        studentKey: key
+                    });
+                });
+            });
+            
+            // Sort by date (newest first)
+            allNotifications.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            if (allNotifications.length === 0) {
+                return `
+                    <div class="text-center text-gray-500 py-8">
+                        <span class="text-4xl block mb-2">📢</span>
+                        <p>لا توجد إشعارات مرسلة</p>
+                    </div>
+                `;
+            }
+            
+            return allNotifications.map(notification => `
+                <div class="border border-gray-200 rounded-lg p-3">
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-2">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full ${getNotificationTypeClass(notification.type)} ml-2">${notification.type}</span>
+                                <span class="text-sm text-gray-500">${notification.date}</span>
+                            </div>
+                            <p class="text-sm text-gray-800 mb-1">${notification.message}</p>
+                            <p class="text-xs text-gray-500">إلى: ${notification.studentName}</p>
+                        </div>
+                        <button onclick="deleteNotification('${notification.studentKey}', '${notification.message}')" class="text-red-600 hover:text-red-800 text-sm">
+                            حذف
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function sendNotification() {
+            const type = document.getElementById('notificationType').value;
+            const category = document.getElementById('notificationCategory').value;
+            const message = document.getElementById('notificationMessage').value;
+            
+            if (!message.trim()) {
+                showCustomAlert('تنبيه', 'يرجى كتابة نص الإشعار');
+                return;
+            }
+            
+            const notification = {
+                type: category,
+                message: message,
+                date: new Date().toISOString().split('T')[0]
+            };
+            
+            if (type === 'عام') {
+                // Send to all students
+                Object.keys(studentsData).forEach(key => {
+                    studentsData[key].notifications.unshift(notification);
+                });
+                showCustomAlert('نجح', 'تم إرسال الإشعار لجميع الطلاب');
+            } else {
+                // Send to specific student
+                const studentKey = document.getElementById('notificationStudent').value;
+                if (!studentKey) {
+                    showCustomAlert('تنبيه', 'يرجى اختيار الطالب');
+                    return;
+                }
+                studentsData[studentKey].notifications.unshift(notification);
+                showCustomAlert('نجح', `تم إرسال الإشعار للطالب ${studentsData[studentKey].name}`);
+            }
+            
+            // Clear form
+            document.getElementById('notificationMessage').value = '';
+            
+            // Refresh notifications list
+            document.getElementById('sentNotifications').innerHTML = generateSentNotifications();
+        }
+        
+        function deleteNotification(studentKey, message) {
+            const student = studentsData[studentKey];
+            const index = student.notifications.findIndex(n => n.message === message);
+            if (index > -1) {
+                student.notifications.splice(index, 1);
+                document.getElementById('sentNotifications').innerHTML = generateSentNotifications();
+                showCustomAlert('نجح', 'تم حذف الإشعار');
+            }
+        }
+        
+        // Utility functions
+        function showCustomAlert(title, message) {
+            // Create custom alert modal
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg p-6 max-w-md mx-4 fade-in">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">${title}</h3>
+                    <p class="text-gray-600 mb-4">${message}</p>
+                    <button onclick="this.closest('.fixed').remove()" class="w-full btn-primary text-white py-2 px-4 rounded-lg">
+                        موافق
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.remove();
+                }
+            }, 3000);
+        }
+        
+        function showAddStudentForm() {
+            const content = `
+                <div class="slide-in">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800">إضافة طالب جديد</h3>
+                        <button onclick="showStudentManagement()" class="text-gray-600 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            العودة للقائمة
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <form onsubmit="addNewStudent(event)" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">الاسم الكامل</label>
+                                    <input type="text" id="newStudentName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل الاسم الكامل">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">اسم المستخدم</label>
+                                    <input type="text" id="newStudentUsername" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل اسم المستخدم">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">كلمة المرور</label>
+                                    <input type="password" id="newStudentPassword" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل كلمة المرور">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">الصف الدراسي</label>
+                                    <select id="newStudentGrade" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                        <option value="">اختر الصف</option>
+                                        <option value="الصف الأول الأساسي">الصف الأول الأساسي</option>
+                                        <option value="الصف الثاني الأساسي">الصف الثاني الأساسي</option>
+                                        <option value="الصف الثالث الأساسي">الصف الثالث الأساسي</option>
+                                        <option value="الصف الرابع الأساسي">الصف الرابع الأساسي</option>
+                                        <option value="الصف الخامس الأساسي">الصف الخامس الأساسي</option>
+                                        <option value="الصف السادس الأساسي">الصف السادس الأساسي</option>
+                                        <option value="الصف السابع الأساسي">الصف السابع الأساسي</option>
+                                        <option value="الصف الثامن الأساسي">الصف الثامن الأساسي</option>
+                                        <option value="الصف التاسع الأساسي">الصف التاسع الأساسي</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">رقم الطالب</label>
+                                    <input type="text" id="newStudentId" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل رقم الطالب">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">إجمالي الرسوم</label>
+                                    <input type="number" id="newStudentTotalFees" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="أدخل إجمالي الرسوم">
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4 space-x-reverse pt-4">
+                                <button type="submit" class="btn-primary text-white py-2 px-6 rounded-lg">
+                                    إضافة الطالب
+                                </button>
+                                <button type="button" onclick="showStudentManagement()" class="text-gray-600 py-2 px-6 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                    إلغاء
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+        }
+        
+        function addNewStudent(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('newStudentName').value;
+            const username = document.getElementById('newStudentUsername').value;
+            const password = document.getElementById('newStudentPassword').value;
+            const grade = document.getElementById('newStudentGrade').value;
+            const id = document.getElementById('newStudentId').value;
+            const totalFees = parseFloat(document.getElementById('newStudentTotalFees').value);
+            
+            // Check if username already exists
+            const existingStudent = Object.values(studentsData).find(s => s.username === username);
+            if (existingStudent) {
+                showCustomAlert('خطأ', 'اسم المستخدم موجود مسبقاً');
+                return;
+            }
+            
+            // Generate new student key
+            const newKey = 'student' + (Object.keys(studentsData).length + 1);
+            
+            // Create new student data
+            studentsData[newKey] = {
+                username: username,
+                password: password,
+                name: name,
+                grade: grade,
+                id: id,
+                grades: {
+                    'نوفمبر': { 'القرآن': 0, 'الإسلامية': 0, 'العربية': 0, 'الإنجليزية': 0, 'الرياضيات': 0, 'العلوم': 0, 'الاجتماعيات': 0, 'الحاسوب': 0 },
+                    'ديسمبر': { 'القرآن': 0, 'الإسلامية': 0, 'العربية': 0, 'الإنجليزية': 0, 'الرياضيات': 0, 'العلوم': 0, 'الاجتماعيات': 0, 'الحاسوب': 0 },
+                    'يناير': { 'القرآن': 0, 'الإسلامية': 0, 'العربية': 0, 'الإنجليزية': 0, 'الرياضيات': 0, 'العلوم': 0, 'الاجتماعيات': 0, 'الحاسوب': 0 }
+                },
+                attendance: generateAttendanceData(),
+                fees: { total: totalFees, paid: 0, remaining: totalFees },
+                notifications: []
+            };
+            
+            showCustomAlert('نجح', 'تم إضافة الطالب بنجاح');
+            showStudentManagement();
+        }
+        
+        function editStudent(key) {
+            const student = studentsData[key];
+            
+            const content = `
+                <div class="slide-in">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800">تعديل بيانات الطالب</h3>
+                        <button onclick="showStudentManagement()" class="text-gray-600 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            العودة للقائمة
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <form onsubmit="updateStudent(event, '${key}')" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">الاسم الكامل</label>
+                                    <input type="text" id="editStudentName" value="${student.name}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">اسم المستخدم</label>
+                                    <input type="text" id="editStudentUsername" value="${student.username}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">كلمة المرور</label>
+                                    <input type="password" id="editStudentPassword" value="${student.password}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">الصف الدراسي</label>
+                                    <select id="editStudentGrade" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                        <option value="الصف الأول الأساسي" ${student.grade === 'الصف الأول الأساسي' ? 'selected' : ''}>الصف الأول الأساسي</option>
+                                        <option value="الصف الثاني الأساسي" ${student.grade === 'الصف الثاني الأساسي' ? 'selected' : ''}>الصف الثاني الأساسي</option>
+                                        <option value="الصف الثالث الأساسي" ${student.grade === 'الصف الثالث الأساسي' ? 'selected' : ''}>الصف الثالث الأساسي</option>
+                                        <option value="الصف الرابع الأساسي" ${student.grade === 'الصف الرابع الأساسي' ? 'selected' : ''}>الصف الرابع الأساسي</option>
+                                        <option value="الصف الخامس الأساسي" ${student.grade === 'الصف الخامس الأساسي' ? 'selected' : ''}>الصف الخامس الأساسي</option>
+                                        <option value="الصف السادس الأساسي" ${student.grade === 'الصف السادس الأساسي' ? 'selected' : ''}>الصف السادس الأساسي</option>
+                                        <option value="الصف السابع الأساسي" ${student.grade === 'الصف السابع الأساسي' ? 'selected' : ''}>الصف السابع الأساسي</option>
+                                        <option value="الصف الثامن الأساسي" ${student.grade === 'الصف الثامن الأساسي' ? 'selected' : ''}>الصف الثامن الأساسي</option>
+                                        <option value="الصف التاسع الأساسي" ${student.grade === 'الصف التاسع الأساسي' ? 'selected' : ''}>الصف التاسع الأساسي</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">رقم الطالب</label>
+                                    <input type="text" id="editStudentId" value="${student.id}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4 space-x-reverse pt-4">
+                                <button type="submit" class="btn-primary text-white py-2 px-6 rounded-lg">
+                                    حفظ التعديلات
+                                </button>
+                                <button type="button" onclick="showStudentManagement()" class="text-gray-600 py-2 px-6 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                    إلغاء
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+            document.getElementById('adminContentArea').innerHTML = content;
+        }
+        
+        function updateStudent(event, key) {
+            event.preventDefault();
+            
+            const name = document.getElementById('editStudentName').value;
+            const username = document.getElementById('editStudentUsername').value;
+            const password = document.getElementById('editStudentPassword').value;
+            const grade = document.getElementById('editStudentGrade').value;
+            const id = document.getElementById('editStudentId').value;
+            
+            // Check if username already exists (excluding current student)
+            const existingStudent = Object.entries(studentsData).find(([k, s]) => k !== key && s.username === username);
+            if (existingStudent) {
+                showCustomAlert('خطأ', 'اسم المستخدم موجود مسبقاً');
+                return;
+            }
+            
+            // Update student data
+            studentsData[key].name = name;
+            studentsData[key].username = username;
+            studentsData[key].password = password;
+            studentsData[key].grade = grade;
+            studentsData[key].id = id;
+            
+            showCustomAlert('نجح', 'تم تحديث بيانات الطالب بنجاح');
+            showStudentManagement();
+        }
+        
+        function deleteStudent(key) {
+            const student = studentsData[key];
+            
+            // Create confirmation dialog
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg p-6 max-w-md mx-4 fade-in">
+                    <h3 class="text-lg font-bold text-red-600 mb-2">تأكيد الحذف</h3>
+                    <p class="text-gray-600 mb-4">هل أنت متأكد من حذف الطالب "${student.name}"؟<br>سيتم حذف جميع بياناته نهائياً.</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <button onclick="confirmDeleteStudent('${key}'); this.closest('.fixed').remove()" class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700">
+                            تأكيد الحذف
+                        </button>
+                        <button onclick="this.closest('.fixed').remove()" class="text-gray-600 py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            إلغاء
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function confirmDeleteStudent(key) {
+            delete studentsData[key];
+            showCustomAlert('نجح', 'تم حذف الطالب بنجاح');
+            showStudentManagement();
+        }
+        
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            showWelcome();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'994d0b1f2084e201',t:'MTc2MTUxNDEwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
